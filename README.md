@@ -1,4 +1,4 @@
-# cp4a-ocp-liberty-certs-poc
+# Hello world springboot app
 
 October 2020  - Omar
 
