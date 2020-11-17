@@ -1,6 +1,6 @@
 # Hello world springboot app
 
-October 2020  - Omar
+October 2020  - Omar Gaye
 
 ### Build
 - run command:
