@@ -1,8 +1,15 @@
-FROM openjdk:8-jdk-alpine
 
-RUN addgroup -S spring && adduser -S spring -G spring
-USER spring:spring
+FROM gradle:jdk8 AS build
 
-ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} demo.jar
-ENTRYPOINT ["java","-jar","/demo.jar"]
+COPY --chown=gradle:gradle . /project
+WORKDIR /project
+
+RUN gradle build --no-daemon
+
+FROM openjdk:8-jre-slim
+
+EXPOSE 8080
+
+COPY --from=build /project/build/libs/*.jar demo.jar
+
+ENTRYPOINT ["java","-jar","demo.jar"]
