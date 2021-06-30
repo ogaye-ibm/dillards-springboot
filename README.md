@@ -26,9 +26,9 @@ PORT=8081 ./gradlew bootRun
 
 ### Test
 
-- http://localhost:8080/demo/hello
+- http://localhost:8080/hello
   - Output will be: Hello CP4A
-- http://localhost:8080/demo/hello/Bob
+- http://localhost:8080/hello/Bob
   - Output will be: Hello Bob
 
 Containerizing Spring Boot, best practice: https://spring.io/guides/gs/spring-boot-docker/
