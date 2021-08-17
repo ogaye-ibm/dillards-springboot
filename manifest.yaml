@@ -1,0 +1,13 @@
+applications:
+  - name: hello-world
+    path: ./build/libs/demo.jar
+    buildpacks:
+      - java_buildpack
+    routes:
+      - route: omarg-hello-world.us-south.cf.appdomain.cloud
+    #stack: cflinuxfs3
+    services:
+      #- backend-service
+    env:
+      #SPRING_PROFILES_ACTIVE: dev
+      #JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.0.2_+ }}'
